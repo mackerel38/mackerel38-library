@@ -186,7 +186,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-03-31 15:01:56+09:00'
+  timestamp: '2025-03-31 15:32:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-static_range_sum.test.cpp

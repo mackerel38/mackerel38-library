@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: main.cpp
+      title: main.cpp
   - name: math
     pages:
     - icon: ':warning:'
@@ -32,11 +37,11 @@ data:
     - icon: ':warning:'
       path: structure/xorBIT.hpp
       title: structure/xorBIT.hpp
-  - name: .
+  - name: util
     pages:
-    - icon: ':warning:'
-      path: template.cpp
-      title: template.cpp
+    - icon: ':heavy_check_mark:'
+      path: util/template.hpp
+      title: util/template.hpp
   verificationCategories:
   - name: verify
     pages:

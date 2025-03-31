@@ -2,23 +2,16 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: structure/UnionFind.hpp
-    title: structure/UnionFind.hpp
-  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-    links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
-  bundledCode: "#line 1 \"verify/aizu-DSL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \r\n\r\n#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\"\
+    links: []
+  bundledCode: "#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\"\
     : \"<<x<<endl\n#else\n#define debug(x)\n// #pragma GCC target(\"arch=skylake-avx512\"\
     )\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
     \ GCC optimize(\"unroll-loops\")\n#endif\n#include<bits/stdc++.h>\nusing namespace\
@@ -67,57 +60,25 @@ data:
     \ ng=mid;}return ok;}\nconst int dxy[5]={0,1,0,-1,0};\nconst int dx[8]={0,1,0,-1,1,1,-1,-1};\n\
     const int dy[8]={1,0,-1,0,1,-1,1,-1};\n#define nl '\\n'\n#define sp ' '\n#define\
     \ inf ((1<<30)-(1<<15))\n#define INF (1LL<<61)\n#define mod 998244353\n\nvoid\
-    \ solve();\n#line 3 \"structure/UnionFind.hpp\"\nusing namespace std;\nstruct\
-    \ UnionFind {\n    int n;\n    vector<int> data;\n    // n \u500B\u306E\u8981\u7D20\
-    \u304B\u3089\u306A\u308BUnionFind \u3092\u69CB\u7BC9 O(n)\n    UnionFind(int _n)\
-    \ : n(_n), data(_n, -1) {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\u4F75\u5408\
-    \ O(\u03B1(n))\n    bool merge(int p, int q) {\n        p = root(p);\n       \
-    \ q = root(q);\n        if (p == q) return false;\n        if (q < p) swap(p,\
-    \ q);\n        data[p] += data[q];\n        data[q] = p;\n        return true;\n\
-    \    }\n    // \u89AA\u8981\u7D20\u3092\u53D6\u5F97 O(\u03B1(n))\n    int root(int\
-    \ p) {\n        assert(0 <= p && p < n);\n        if (data[p] < 0) {\n       \
-    \     return p;\n        } else {\n            data[p] = root(data[p]);\n    \
-    \        return data[p];\n        }\n    }\n    // \u89AA\u8981\u7D20\u3092\u53D6\
-    \u5F97 O(\u03B1(n))\n    int operator[](int p) {\n        return root(p);\n  \
-    \  }\n    // 2 \u3064\u306E\u8981\u7D20\u304C\u540C\u3058\u96C6\u5408\u306B\u542B\
-    \u307E\u308C\u308B\u304B\u5224\u5B9A O(\u03B1(n))\n    bool same(int p, int q)\
-    \ {\n        return root(p) == root(q);\n    }\n    // \u8981\u7D20\u304C\u5C5E\
-    \u3059\u308B\u96C6\u5408\u306E\u5927\u304D\u3055\u3092\u8FD4\u3059 O(\u03B1(n))\n\
-    \    int size(int p) {\n        return -data[root(p)];\n    }\n    // UnionFind\
-    \ \u306E\u9023\u7D50\u6210\u5206\u306Evector \u3092\u8FD4\u3059 O(n\u03B1(n))\n\
-    \    vector<vector<int>> groups() {\n        vector<vector<int>> re(n);\n    \
-    \    for (int i=0; i<n; i++) re[root(i)].push_back(i);\n        re.erase(remove_if(re.begin(),\
-    \ re.end(), [](vector<int>& v){ return v.empty(); }), re.end());\n        return\
-    \ re;\n    }\n};\n#line 5 \"verify/aizu-DSL_1_A.test.cpp\"\n\r\nvoid solve();\r\
-    \nint main() {\r\n    ios::sync_with_stdio(false);\r\n    cin.tie(nullptr);\r\n\
-    \    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\n    // cin >> T;\r\n  \
-    \  while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n    int n, q; cin >> n >>\
-    \ q;\r\n    UnionFind uf(n);\r\n    while (q--) {\r\n        int x, y, z; cin\
-    \ >> x >> y >> z;\r\n        if (x == 0) {\r\n            uf.merge(y, z);\r\n\
-    \        } else {\r\n            cout << uf.same(y, z) << nl;\r\n        }\r\n\
-    \    }\r\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \r\n\r\n#include \"template\"\r\n#include \"UnionFind\"\r\n\r\nvoid solve();\r\
-    \nint main() {\r\n    ios::sync_with_stdio(false);\r\n    cin.tie(nullptr);\r\n\
-    \    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\n    // cin >> T;\r\n  \
-    \  while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n    int n, q; cin >> n >>\
-    \ q;\r\n    UnionFind uf(n);\r\n    while (q--) {\r\n        int x, y, z; cin\
-    \ >> x >> y >> z;\r\n        if (x == 0) {\r\n            uf.merge(y, z);\r\n\
-    \        } else {\r\n            cout << uf.same(y, z) << nl;\r\n        }\r\n\
-    \    }\r\n}"
+    \ solve();\n#line 2 \"main.cpp\"\n\r\nint main() {\r\n    ios::sync_with_stdio(false);\r\
+    \n    cin.tie(nullptr);\r\n    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\
+    \n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n\
+    }\n"
+  code: "#include \"template\"\r\n\r\nint main() {\r\n    ios::sync_with_stdio(false);\r\
+    \n    cin.tie(nullptr);\r\n    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\
+    \n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n}"
   dependsOn:
   - util/template.hpp
-  - structure/UnionFind.hpp
-  isVerificationFile: true
-  path: verify/aizu-DSL_1_A.test.cpp
+  isVerificationFile: false
+  path: main.cpp
   requiredBy: []
-  timestamp: '2025-03-31 16:17:14+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-03-31 16:15:55+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: verify/aizu-DSL_1_A.test.cpp
+documentation_of: main.cpp
 layout: document
 redirect_from:
-- /verify/verify/aizu-DSL_1_A.test.cpp
-- /verify/verify/aizu-DSL_1_A.test.cpp.html
-title: verify/aizu-DSL_1_A.test.cpp
+- /library/main.cpp
+- /library/main.cpp.html
+title: main.cpp
 ---
