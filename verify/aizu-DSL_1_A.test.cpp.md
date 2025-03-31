@@ -158,7 +158,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2025-03-30 18:27:13+09:00'
+  timestamp: '2025-03-31 14:46:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-DSL_1_A.test.cpp
