@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-DSL_1_A.test.cpp
     title: verify/aizu-DSL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-unionfind.test.cpp
+    title: verify/yosupo-unionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -62,6 +65,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-DSL_1_A.test.cpp
+  - verify/yosupo-unionfind.test.cpp
 documentation_of: structure/UnionFind.hpp
 layout: document
 redirect_from:

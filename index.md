@@ -64,5 +64,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-staticrmq.test.cpp
       title: verify/yosupo-staticrmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-unionfind.test.cpp
+      title: verify/yosupo-unionfind.test.cpp
 layout: toppage
 ---
