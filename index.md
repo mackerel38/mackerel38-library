@@ -14,6 +14,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: math/modint.hpp
+    - icon: ':heavy_check_mark:'
+      path: math/prime.hpp
+      title: math/prime.hpp
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -60,6 +63,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-point_add_range_sum.test.cpp
       title: verify/yosupo-point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-primality_test.test.cpp
+      title: verify/yosupo-primality_test.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-range_affine_point_get.test.cpp
       title: verify/yosupo-range_affine_point_get.test.cpp
