@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-DSL_2_A.test.cpp
     title: verify/aizu-DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-static_range_sum.test.cpp
+    title: verify/yosupo-static_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -115,6 +118,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-DSL_2_A.test.cpp
+  - verify/yosupo-static_range_sum.test.cpp
 documentation_of: structure/segtree.hpp
 layout: document
 redirect_from:
