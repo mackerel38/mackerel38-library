@@ -69,22 +69,22 @@ data:
     const int dy[8]={1,0,-1,0,1,-1,1,-1};\n#define nl '\\n'\n#define sp ' '\n#define\
     \ inf ((1<<30)-(1<<15))\n#define INF (1LL<<61)\n#define mod 998244353\n\nvoid\
     \ IO() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout<<fixed<<setprecision(30);\n\
-    }\n\nvoid solve();\n#line 3 \"math/prime.hpp\"\nusing namespace std;\nbool isprime(long\
-    \ long n) {\n    if (n <= 1) return false;\n    if (n == 2) return true;\n   \
-    \ if (n % 2 == 0) return false;\n    int flag = 1;\n    if (n < 4759123141LL)\
-    \ flag = 0;\n    vector<vector<long long>> tests = {{2, 7, 61}, {2, 325, 9375,\
-    \ 28178, 450775, 9780504, 1795265022}};\n    long long s = 0, d = n - 1;\n   \
-    \ while (d % 2 == 0) {\n        ++s;\n        d >>= 1;\n    }\n    for (auto a\
-    \ : tests[flag]) {\n        if (n <= a) return true;\n        __int128_t x = 1,\
-    \ a2=a, d2 = d;\n        while (d2) {\n            if (d2 & 1) x = x * a2 % n;\n\
-    \            a2 = a2 * a2 % n;\n            d2 >>= 1;\n        }\n        if (x\
-    \ != 1) {\n            long long t;\n            for (t = 0; t < s; ++t) {\n \
-    \               if (x == n - 1) break;\n                x = x * x % n;\n     \
-    \       }\n            if (t == s) return false;\n        }\n    }\n    return\
-    \ true;\n}\n#line 4 \"verify/yosupo-primality_test.test.cpp\"\n\r\nint main()\
-    \ { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\n\
-    }\r\n\r\nvoid solve() {\r\n    int q; cin >> q;\r\n    while (q--) {\r\n     \
-    \   ll n; cin >> n;\r\n        YN(isprime(n));\r\n    }\r\n}\n"
+    }\n\nvoid solve();\n#line 3 \"math/prime.hpp\"\nusing namespace std;\n// \u7D20\
+    \u6570\u5224\u5B9A O(log n)\nbool isprime(long long n) {\n    if (n <= 1) return\
+    \ false;\n    if (n == 2) return true;\n    if (n % 2 == 0) return false;\n  \
+    \  int flag = 1;\n    if (n < 4759123141LL) flag = 0;\n    vector<vector<long\
+    \ long>> tests = {{2, 7, 61}, {2, 325, 9375, 28178, 450775, 9780504, 1795265022}};\n\
+    \    long long s = 0, d = n - 1;\n    while (d % 2 == 0) {\n        ++s;\n   \
+    \     d >>= 1;\n    }\n    for (auto a : tests[flag]) {\n        if (n <= a) return\
+    \ true;\n        __int128_t x = 1, a2=a%n, d2 = d;\n        while (d2) {\n   \
+    \         if (d2 & 1) x = x * a2 % n;\n            a2 = a2 * a2 % n;\n       \
+    \     d2 >>= 1;\n        }\n        if (x != 1) {\n            long long t;\n\
+    \            for (t = 0; t < s; ++t) {\n                if (x == n - 1) break;\n\
+    \                x = x * x % n;\n            }\n            if (t == s) return\
+    \ false;\n        }\n    }\n    return true;\n}\n#line 4 \"verify/yosupo-primality_test.test.cpp\"\
+    \n\r\nint main() { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--)\
+    \ solve();\r\n}\r\n\r\nvoid solve() {\r\n    int q; cin >> q;\r\n    while (q--)\
+    \ {\r\n        ll n; cin >> n;\r\n        YN(isprime(n));\r\n    }\r\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\r\n#include\
     \ \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int T=1;\r\
     \n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n\
@@ -96,7 +96,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-03-31 23:33:22+09:00'
+  timestamp: '2025-03-31 23:40:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-primality_test.test.cpp
