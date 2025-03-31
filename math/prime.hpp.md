@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo-enumerate_primes.test.cpp
+    title: verify/yosupo-enumerate_primes.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-primality_test.test.cpp
     title: verify/yosupo-primality_test.test.cpp
   _isVerificationFailed: false
@@ -23,7 +26,12 @@ data:
     \     d2 >>= 1;\n        }\n        if (x != 1) {\n            long long t;\n\
     \            for (t = 0; t < s; ++t) {\n                if (x == n - 1) break;\n\
     \                x = x * x % n;\n            }\n            if (t == s) return\
-    \ false;\n        }\n    }\n    return true;\n}\n"
+    \ false;\n        }\n    }\n    return true;\n}\nvector<int> primes;\n// n \u4EE5\
+    \u4E0B\u306E\u7D20\u6570\u3092primes \u306B\u5217\u6319\u3059\u308B O(n log log\
+    \ n)\nint enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long\
+    \ long i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
+    \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
+    \        }\n    }\n    return primes.size();\n}\n"
   code: "#pragma once\n#include <bits/stdc++.h>\nusing namespace std;\n// \u7D20\u6570\
     \u5224\u5B9A O(log n)\nbool isprime(long long n) {\n    if (n <= 1) return false;\n\
     \    if (n == 2) return true;\n    if (n % 2 == 0) return false;\n    int flag\
@@ -36,14 +44,20 @@ data:
     \ 1;\n        }\n        if (x != 1) {\n            long long t;\n           \
     \ for (t = 0; t < s; ++t) {\n                if (x == n - 1) break;\n        \
     \        x = x * x % n;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}"
+    \        }\n    }\n    return true;\n}\nvector<int> primes;\n// n \u4EE5\u4E0B\
+    \u306E\u7D20\u6570\u3092primes \u306B\u5217\u6319\u3059\u308B O(n log log n)\n\
+    int enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long long\
+    \ i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
+    \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
+    \        }\n    }\n    return primes.size();\n}"
   dependsOn: []
   isVerificationFile: false
   path: math/prime.hpp
   requiredBy: []
-  timestamp: '2025-03-31 23:40:20+09:00'
+  timestamp: '2025-04-01 00:34:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo-enumerate_primes.test.cpp
   - verify/yosupo-primality_test.test.cpp
 documentation_of: math/prime.hpp
 layout: document

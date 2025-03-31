@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/primality_test
+    PROBLEM: https://judge.yosupo.jp/problem/enumerate_primes
     links:
-    - https://judge.yosupo.jp/problem/primality_test
-  bundledCode: "#line 1 \"verify/yosupo-primality_test.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/primality_test\"\r\n#line 2 \"util/template.hpp\"\
+    - https://judge.yosupo.jp/problem/enumerate_primes
+  bundledCode: "#line 1 \"verify/yosupo-enumerate_primes.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\r\n#line 2 \"util/template.hpp\"\
     \n#ifdef poe\n#define debug(x) cerr<<#x<<\": \"<<x<<endl\n#else\n#define debug(x)\n\
     // #pragma GCC target(\"arch=skylake-avx512\")\n// #pragma GCC target(\"avx2\"\
     )\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n\
@@ -86,28 +86,31 @@ data:
     \ n)\nint enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long\
     \ long i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
     \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
-    \        }\n    }\n    return primes.size();\n}\n#line 4 \"verify/yosupo-primality_test.test.cpp\"\
+    \        }\n    }\n    return primes.size();\n}\n#line 4 \"verify/yosupo-enumerate_primes.test.cpp\"\
     \n\r\nint main() { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--)\
-    \ solve();\r\n}\r\n\r\nvoid solve() {\r\n    int q; cin >> q;\r\n    while (q--)\
-    \ {\r\n        ll n; cin >> n;\r\n        YN(isprime(n));\r\n    }\r\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\r\n#include\
-    \ \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int T=1;\r\
-    \n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n\
-    \    int q; cin >> q;\r\n    while (q--) {\r\n        ll n; cin >> n;\r\n    \
-    \    YN(isprime(n));\r\n    }\r\n}"
+    \ solve();\r\n}\r\n\r\nvoid solve() {\r\n    int n, a, b; cin >> n >> a >> b;\r\
+    \n    int cnt = enumprimes(n);\r\n    vi ans;\r\n    for (int i=b; i<cnt; i+=a)\
+    \ ans.pb(primes[i]);\r\n    cout << cnt << sp << ans.size() << nl;\r\n    cout\
+    \ << ans;\r\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\r\n\
+    #include \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int\
+    \ T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve()\
+    \ {\r\n    int n, a, b; cin >> n >> a >> b;\r\n    int cnt = enumprimes(n);\r\n\
+    \    vi ans;\r\n    for (int i=b; i<cnt; i+=a) ans.pb(primes[i]);\r\n    cout\
+    \ << cnt << sp << ans.size() << nl;\r\n    cout << ans;\r\n}"
   dependsOn:
   - util/template.hpp
   - math/prime.hpp
   isVerificationFile: true
-  path: verify/yosupo-primality_test.test.cpp
+  path: verify/yosupo-enumerate_primes.test.cpp
   requiredBy: []
   timestamp: '2025-04-01 00:34:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo-primality_test.test.cpp
+documentation_of: verify/yosupo-enumerate_primes.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo-primality_test.test.cpp
-- /verify/verify/yosupo-primality_test.test.cpp.html
-title: verify/yosupo-primality_test.test.cpp
+- /verify/verify/yosupo-enumerate_primes.test.cpp
+- /verify/verify/yosupo-enumerate_primes.test.cpp.html
+title: verify/yosupo-enumerate_primes.test.cpp
 ---
