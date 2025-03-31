@@ -18,8 +18,8 @@ data:
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
   bundledCode: "#line 1 \"verify/aizu-DSL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \r\n\r\n#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\"\
-    : \"<<x<<endl\n#else\n#define debug(x)\n// #pragma GCC target(\"arch=skylake-avx512\"\
+    \r\n#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\":\
+    \ \"<<x<<endl\n#else\n#define debug(x)\n// #pragma GCC target(\"arch=skylake-avx512\"\
     )\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
     \ GCC optimize(\"unroll-loops\")\n#endif\n#include<bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll=long long;\nusing ull=unsigned long long;\nusing ld=long double;\n\
@@ -67,10 +67,11 @@ data:
     \ ng=mid;}return ok;}\nconst int dxy[5]={0,1,0,-1,0};\nconst int dx[8]={0,1,0,-1,1,1,-1,-1};\n\
     const int dy[8]={1,0,-1,0,1,-1,1,-1};\n#define nl '\\n'\n#define sp ' '\n#define\
     \ inf ((1<<30)-(1<<15))\n#define INF (1LL<<61)\n#define mod 998244353\n\nvoid\
-    \ solve();\n#line 3 \"structure/UnionFind.hpp\"\nusing namespace std;\nstruct\
-    \ UnionFind {\n    int n;\n    vector<int> data;\n    // n \u500B\u306E\u8981\u7D20\
-    \u304B\u3089\u306A\u308BUnionFind \u3092\u69CB\u7BC9 O(n)\n    UnionFind(int _n)\
-    \ : n(_n), data(_n, -1) {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\u4F75\u5408\
+    \ IO() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout<<fixed<<setprecision(30);\n\
+    }\n\nvoid solve();\n#line 3 \"structure/UnionFind.hpp\"\nusing namespace std;\n\
+    struct UnionFind {\n    int n;\n    vector<int> data;\n    // n \u500B\u306E\u8981\
+    \u7D20\u304B\u3089\u306A\u308BUnionFind \u3092\u69CB\u7BC9 O(n)\n    UnionFind(int\
+    \ _n) : n(_n), data(_n, -1) {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\u4F75\u5408\
     \ O(\u03B1(n))\n    bool merge(int p, int q) {\n        p = root(p);\n       \
     \ q = root(q);\n        if (p == q) return false;\n        if (q < p) swap(p,\
     \ q);\n        data[p] += data[q];\n        data[q] = p;\n        return true;\n\
@@ -88,30 +89,24 @@ data:
     \    vector<vector<int>> groups() {\n        vector<vector<int>> re(n);\n    \
     \    for (int i=0; i<n; i++) re[root(i)].push_back(i);\n        re.erase(remove_if(re.begin(),\
     \ re.end(), [](vector<int>& v){ return v.empty(); }), re.end());\n        return\
-    \ re;\n    }\n};\n#line 5 \"verify/aizu-DSL_1_A.test.cpp\"\n\r\nvoid solve();\r\
-    \nint main() {\r\n    ios::sync_with_stdio(false);\r\n    cin.tie(nullptr);\r\n\
-    \    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\n    // cin >> T;\r\n  \
-    \  while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n    int n, q; cin >> n >>\
-    \ q;\r\n    UnionFind uf(n);\r\n    while (q--) {\r\n        int x, y, z; cin\
-    \ >> x >> y >> z;\r\n        if (x == 0) {\r\n            uf.merge(y, z);\r\n\
-    \        } else {\r\n            cout << uf.same(y, z) << nl;\r\n        }\r\n\
-    \    }\r\n}\n"
+    \ re;\n    }\n};\n#line 4 \"verify/aizu-DSL_1_A.test.cpp\"\n\r\nint main() { IO();\r\
+    \n    int T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid\
+    \ solve() {\r\n    int n, q; cin >> n >> q;\r\n    UnionFind uf(n);\r\n    while\
+    \ (q--) {\r\n        int t, u, v; cin >> t >> u >> v;\r\n        if (t == 0) uf.merge(u,\
+    \ v);\r\n        else cout << uf.same(u, v) << endl;\r\n    }\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
-    \r\n\r\n#include \"template\"\r\n#include \"UnionFind\"\r\n\r\nvoid solve();\r\
-    \nint main() {\r\n    ios::sync_with_stdio(false);\r\n    cin.tie(nullptr);\r\n\
-    \    cout<<fixed<<setprecision(30);\r\n    int T=1;\r\n    // cin >> T;\r\n  \
-    \  while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n    int n, q; cin >> n >>\
-    \ q;\r\n    UnionFind uf(n);\r\n    while (q--) {\r\n        int x, y, z; cin\
-    \ >> x >> y >> z;\r\n        if (x == 0) {\r\n            uf.merge(y, z);\r\n\
-    \        } else {\r\n            cout << uf.same(y, z) << nl;\r\n        }\r\n\
-    \    }\r\n}"
+    \r\n#include \"template\"\r\n#include \"UnionFind\"\r\n\r\nint main() { IO();\r\
+    \n    int T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid\
+    \ solve() {\r\n    int n, q; cin >> n >> q;\r\n    UnionFind uf(n);\r\n    while\
+    \ (q--) {\r\n        int t, u, v; cin >> t >> u >> v;\r\n        if (t == 0) uf.merge(u,\
+    \ v);\r\n        else cout << uf.same(u, v) << endl;\r\n    }\r\n}"
   dependsOn:
   - util/template.hpp
   - structure/UnionFind.hpp
   isVerificationFile: true
   path: verify/aizu-DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2025-03-31 16:17:14+09:00'
+  timestamp: '2025-03-31 16:37:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-DSL_1_A.test.cpp
