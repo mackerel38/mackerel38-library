@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: math/dynamicmodint.hpp
       title: math/dynamicmodint.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: math/modint.hpp
   - name: structure
@@ -17,7 +17,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/UnionFind.hpp
       title: structure/UnionFind.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: structure/lazysegtree.hpp
       title: structure/lazysegtree.hpp
     - icon: ':warning:'
@@ -55,6 +55,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-point_add_range_sum.test.cpp
       title: verify/yosupo-point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-range_affine_range_sum.test.cpp
+      title: verify/yosupo-range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-staticrmq.test.cpp
       title: verify/yosupo-staticrmq.test.cpp

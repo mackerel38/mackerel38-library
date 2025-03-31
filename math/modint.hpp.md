@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-range_affine_range_sum.test.cpp
+    title: verify/yosupo-range_affine_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/modint.hpp\"\n#include<bits/stdc++.h>\nusing namespace\
@@ -107,8 +110,9 @@ data:
   path: math/modint.hpp
   requiredBy: []
   timestamp: '2025-03-31 02:44:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo-range_affine_range_sum.test.cpp
 documentation_of: math/modint.hpp
 layout: document
 redirect_from:
