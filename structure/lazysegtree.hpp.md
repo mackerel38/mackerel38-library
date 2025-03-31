@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo-range_affine_point_get.test.cpp
+    title: verify/yosupo-range_affine_point_get.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-range_affine_range_sum.test.cpp
     title: verify/yosupo-range_affine_range_sum.test.cpp
   _isVerificationFailed: false
@@ -119,6 +122,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo-range_affine_range_sum.test.cpp
+  - verify/yosupo-range_affine_point_get.test.cpp
 documentation_of: structure/lazysegtree.hpp
 layout: document
 redirect_from:
