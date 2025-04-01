@@ -25,6 +25,9 @@ data:
     path: verify/yosupo-factorize.test.cpp
     title: verify/yosupo-factorize.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo-minimum_spanning_tree.test.cpp
+    title: verify/yosupo-minimum_spanning_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-point_add_range_sum.test.cpp
     title: verify/yosupo-point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -164,6 +167,7 @@ data:
   - verify/aizu-DSL_1_A.test.cpp
   - verify/yosupo-range_affine_range_sum.test.cpp
   - verify/yosupo-staticrmq.test.cpp
+  - verify/yosupo-minimum_spanning_tree.test.cpp
   - verify/yosupo-range_affine_point_get.test.cpp
   - verify/yosupo-static_range_sum.test.cpp
   - verify/yosupo-enumerate_primes.test.cpp

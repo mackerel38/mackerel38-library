@@ -3,9 +3,15 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/graphtemplate.hpp
       title: graph/graphtemplate.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/kruskal.hpp
+      title: graph/kruskal.hpp
+    - icon: ':warning:'
+      path: graph/prim.hpp
+      title: graph/prim.hpp
   - name: .
     pages:
     - icon: ':warning:'
@@ -71,6 +77,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-factorize.test.cpp
       title: verify/yosupo-factorize.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-minimum_spanning_tree.test.cpp
+      title: verify/yosupo-minimum_spanning_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-point_add_range_sum.test.cpp
       title: verify/yosupo-point_add_range_sum.test.cpp
