@@ -6,7 +6,7 @@ data:
     path: main.cpp
     title: main.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-DSL_1_A.test.cpp
     title: verify/aizu-DSL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo-unionfind.test.cpp
     title: verify/yosupo-unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\"\
@@ -158,7 +158,7 @@ data:
   requiredBy:
   - main.cpp
   timestamp: '2025-03-31 16:24:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-DSL_2_A.test.cpp
   - verify/aizu-DSL_1_A.test.cpp

@@ -9,16 +9,16 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"structure/rollbackUnionFind.hpp\"\n#include<bits/stdc++.h>\n\
-    using namespace std;\nstruct rollbackUnionFind {\n    int n;\n    vector<int>\
-    \ data;\n    stack<pair<int, int>> history;\n    int snap;\n    // n \u500B\u306E\
+    using namespace std;\nstruct rollbackUnionFind {\n    int _n;\n    vector<int>\
+    \ data;\n    stack<pair<int, int>> history;\n    int snap;\n    // _n \u500B\u306E\
     \u8981\u7D20\u304B\u3089\u306A\u308Brollback \u53EF\u80FD\u306AUnionFind \u3092\
-    \u69CB\u7BC9 O(n)\n    rollbackUnionFind(int _n) : n(_n), data(_n, -1), snap(0)\
+    \u69CB\u7BC9 O(n)\n    rollbackUnionFind(int n) : _n(n), data(n, -1), snap(0)\
     \ {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\u4F75\u5408 O(log n)\n    bool merge(int\
     \ p, int q) {\n        p = root(p);\n        q = root(q);\n        history.push({p,\
     \ data[p]});\n        history.push({q, data[q]});\n        if (p == q) return\
     \ false;\n        if (data[q] < data[p]) swap(p, q);\n        data[p] += data[q];\n\
     \        data[q] = p;\n        return true;\n    }\n    // \u89AA\u8981\u7D20\u3092\
-    \u53D6\u5F97 O(log n)\n    int root(int p) {\n        assert(0 <= p && p < n);\n\
+    \u53D6\u5F97 O(log n)\n    int root(int p) {\n        assert(0 <= p && p < _n);\n\
     \        if (data[p] < 0) {\n            return p;\n        } else {\n       \
     \     return root(data[p]);\n        }\n    }\n    // 2 \u3064\u306E\u8981\u7D20\
     \u304C\u540C\u3058\u96C6\u5408\u306B\u542B\u307E\u308C\u308B\u304B\u5224\u5B9A\
@@ -35,21 +35,21 @@ data:
     \u4F5C\u56DE\u6570)\n    void rollback(int state=-1) {\n        if (state == -1)\
     \ state = snap;\n        assert(state <= history.size());\n        while (state\
     \ < history.size()) undo();\n    }\n    // UnionFind \u306E\u9023\u7D50\u6210\u5206\
-    \u306Evector \u3092\u8FD4\u3059 O(nlog n)\n    vector<vector<int>> groups() {\n\
-    \        vector<vector<int>> re(n);\n        for (int i=0; i<n; i++) re[root(i)].push_back(i);\n\
+    \u306Evector \u3092\u8FD4\u3059 O(n log n)\n    vector<vector<int>> groups() {\n\
+    \        vector<vector<int>> re(_n);\n        for (int i=0; i<_n; i++) re[root(i)].push_back(i);\n\
     \        re.erase(remove_if(re.begin(), re.end(), [](vector<int>& v){ return v.empty();\
     \ }), re.end());\n        return re;\n    }\n};\n"
   code: "#pragma once\n#include<bits/stdc++.h>\nusing namespace std;\nstruct rollbackUnionFind\
-    \ {\n    int n;\n    vector<int> data;\n    stack<pair<int, int>> history;\n \
-    \   int snap;\n    // n \u500B\u306E\u8981\u7D20\u304B\u3089\u306A\u308Brollback\
+    \ {\n    int _n;\n    vector<int> data;\n    stack<pair<int, int>> history;\n\
+    \    int snap;\n    // _n \u500B\u306E\u8981\u7D20\u304B\u3089\u306A\u308Brollback\
     \ \u53EF\u80FD\u306AUnionFind \u3092\u69CB\u7BC9 O(n)\n    rollbackUnionFind(int\
-    \ _n) : n(_n), data(_n, -1), snap(0) {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\
+    \ n) : _n(n), data(n, -1), snap(0) {}\n    // 2 \u3064\u306E\u8981\u7D20\u3092\
     \u4F75\u5408 O(log n)\n    bool merge(int p, int q) {\n        p = root(p);\n\
     \        q = root(q);\n        history.push({p, data[p]});\n        history.push({q,\
     \ data[q]});\n        if (p == q) return false;\n        if (data[q] < data[p])\
     \ swap(p, q);\n        data[p] += data[q];\n        data[q] = p;\n        return\
     \ true;\n    }\n    // \u89AA\u8981\u7D20\u3092\u53D6\u5F97 O(log n)\n    int\
-    \ root(int p) {\n        assert(0 <= p && p < n);\n        if (data[p] < 0) {\n\
+    \ root(int p) {\n        assert(0 <= p && p < _n);\n        if (data[p] < 0) {\n\
     \            return p;\n        } else {\n            return root(data[p]);\n\
     \        }\n    }\n    // 2 \u3064\u306E\u8981\u7D20\u304C\u540C\u3058\u96C6\u5408\
     \u306B\u542B\u307E\u308C\u308B\u304B\u5224\u5B9A O(log n)\n    bool same(int p,\
@@ -65,16 +65,16 @@ data:
     \u4F4D\u7F6E\u304B\u3089 O(\u64CD\u4F5C\u56DE\u6570)\n    void rollback(int state=-1)\
     \ {\n        if (state == -1) state = snap;\n        assert(state <= history.size());\n\
     \        while (state < history.size()) undo();\n    }\n    // UnionFind \u306E\
-    \u9023\u7D50\u6210\u5206\u306Evector \u3092\u8FD4\u3059 O(nlog n)\n    vector<vector<int>>\
-    \ groups() {\n        vector<vector<int>> re(n);\n        for (int i=0; i<n; i++)\
-    \ re[root(i)].push_back(i);\n        re.erase(remove_if(re.begin(), re.end(),\
+    \u9023\u7D50\u6210\u5206\u306Evector \u3092\u8FD4\u3059 O(n log n)\n    vector<vector<int>>\
+    \ groups() {\n        vector<vector<int>> re(_n);\n        for (int i=0; i<_n;\
+    \ i++) re[root(i)].push_back(i);\n        re.erase(remove_if(re.begin(), re.end(),\
     \ [](vector<int>& v){ return v.empty(); }), re.end());\n        return re;\n \
     \   }\n};"
   dependsOn: []
   isVerificationFile: false
   path: structure/rollbackUnionFind.hpp
   requiredBy: []
-  timestamp: '2025-03-29 16:32:34+09:00'
+  timestamp: '2025-04-01 16:14:35+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structure/rollbackUnionFind.hpp
