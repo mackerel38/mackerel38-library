@@ -86,10 +86,22 @@ data:
     \ n)\nint enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long\
     \ long i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
     \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
-    \        }\n    }\n    return primes.size();\n}\n#line 4 \"verify/yosupo-primality_test.test.cpp\"\
-    \n\r\nint main() { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--)\
-    \ solve();\r\n}\r\n\r\nvoid solve() {\r\n    int q; cin >> q;\r\n    while (q--)\
-    \ {\r\n        ll n; cin >> n;\r\n        YN(isprime(n));\r\n    }\r\n}\n"
+    \        }\n    }\n    return primes.size();\n}\n// \u7D20\u56E0\u6570\u5206\u89E3\
+    \u3092\u3059\u308B O(n^0.25)\nvoid factorize(long long n, vector<long long>& factors)\
+    \ {\n    if (n <= 1) return;\n    if (isprime(n)) {\n        factors.push_back(n);\n\
+    \        return;\n    }\n    if (n % 2 == 0) {\n        while (n % 2 == 0) {\n\
+    \            factors.push_back(2);\n            n /= 2;\n        }\n        factorize(n,\
+    \ factors);\n        return;\n    }\n    while (true) {\n        __int128_t x\
+    \ = rand() % (n - 2) + 2;\n        __int128_t y = x;\n        __int128_t c = rand()\
+    \ % (n - 1) + 1;\n        __int128_t m = 1;\n        while (m == 1) {\n      \
+    \      x = (x * x + c) % n;\n            y = (y * y + c) % n;\n            y =\
+    \ (y * y + c) % n;\n            m = gcd((long long)(x - y + n), n);\n        \
+    \    if (m == n) break;\n        }\n        if (m != n) {\n            factorize(m,\
+    \ factors);\n            factorize(n / m, factors);\n            return;\n   \
+    \     }\n    }\n}\n#line 4 \"verify/yosupo-primality_test.test.cpp\"\n\r\nint\
+    \ main() { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\
+    \n}\r\n\r\nvoid solve() {\r\n    int q; cin >> q;\r\n    while (q--) {\r\n   \
+    \     ll n; cin >> n;\r\n        YN(isprime(n));\r\n    }\r\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\r\n#include\
     \ \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int T=1;\r\
     \n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n\
@@ -101,7 +113,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-04-01 00:34:14+09:00'
+  timestamp: '2025-04-01 14:20:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-primality_test.test.cpp

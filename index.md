@@ -64,6 +64,9 @@ data:
       path: verify/yosupo-enumerate_primes.test.cpp
       title: verify/yosupo-enumerate_primes.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo-factorize.test.cpp
+      title: verify/yosupo-factorize.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo-point_add_range_sum.test.cpp
       title: verify/yosupo-point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'

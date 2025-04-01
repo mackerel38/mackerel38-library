@@ -14,30 +14,29 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/enumerate_primes
+    PROBLEM: https://judge.yosupo.jp/problem/factorize
     links:
-    - https://judge.yosupo.jp/problem/enumerate_primes
-  bundledCode: "#line 1 \"verify/yosupo-enumerate_primes.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\r\n#line 2 \"util/template.hpp\"\
-    \n#ifdef poe\n#define debug(x) cerr<<#x<<\": \"<<x<<endl\n#else\n#define debug(x)\n\
-    // #pragma GCC target(\"arch=skylake-avx512\")\n// #pragma GCC target(\"avx2\"\
-    )\n// #pragma GCC optimize(\"O3\")\n// #pragma GCC optimize(\"unroll-loops\")\n\
-    #endif\n#include<bits/stdc++.h>\nusing namespace std;\nusing ll=long long;\nusing\
-    \ ull=unsigned long long;\nusing ld=long double;\nusing pi=pair<int,int>;\nusing\
-    \ pll=pair<ll,ll>;\nusing str=string;\ntemplate<class T>using vec=vector<T>;\n\
-    using vi=vec<int>;using vvi=vec<vi>;using vvvi=vec<vvi>;using vvvvi=vec<vvvi>;using\
-    \ vvvvvi=vec<vvvvi>;\nusing vll=vec<ll>;using vvll=vec<vll>;using vvvll=vec<vvll>;using\
-    \ vvvvll=vec<vvvll>;using vvvvvll=vec<vvvvll>;\nusing vpi=vec<pi>;using vvpi=vec<vpi>;using\
-    \ vvvpi=vec<vvpi>;using vvvvpi=vec<vvvpi>;using vvvvvpi=vec<vvvvpi>;\nusing vpll=vec<pll>;using\
-    \ vvpll=vec<vpll>;using vvvpll=vec<vvpll>;using vvvvpll=vec<vvvpll>;using vvvvvpll=vec<vvvvpll>;\n\
-    template<class T>using pq=priority_queue<T,vector<T>>;\ntemplate<class T>using\
-    \ pqg=priority_queue<T,vector<T>,greater<T>>;\n#define rep(i,n) for(int i=0;i<(int)(n);i++)\n\
-    #define rep1(i,n) for(int i=1;i<=(int)(n);i++)\n#define per(i,n) for(int i=(int)(n)-1;0<=i;i--)\n\
-    #define per1(i,n) for(int i=(int)(n);0<i;i--)\n#define range(i,x) for(auto&i:x)\n\
-    #define range2(i,j,x) for(auto&[i,j]:x)\n#define all(x) (x).begin(),(x).end()\n\
-    #define rall(x) (x).rbegin(),(x).rend()\n#define Sort(x) sort((x).begin(),(x).end())\n\
-    #define troS(x) sort((x).rbegin(),(x).rend())\n#define Reverse(x) reverse((x).begin(),(x).end())\n\
-    #define uniq(x) sort((x).begin(),(x).end());(x).erase(unique((x).begin(),(x).end()),(x).end())\n\
+    - https://judge.yosupo.jp/problem/factorize
+  bundledCode: "#line 1 \"verify/yosupo-factorize.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\
+    \r\n#line 2 \"util/template.hpp\"\n#ifdef poe\n#define debug(x) cerr<<#x<<\":\
+    \ \"<<x<<endl\n#else\n#define debug(x)\n// #pragma GCC target(\"arch=skylake-avx512\"\
+    )\n// #pragma GCC target(\"avx2\")\n// #pragma GCC optimize(\"O3\")\n// #pragma\
+    \ GCC optimize(\"unroll-loops\")\n#endif\n#include<bits/stdc++.h>\nusing namespace\
+    \ std;\nusing ll=long long;\nusing ull=unsigned long long;\nusing ld=long double;\n\
+    using pi=pair<int,int>;\nusing pll=pair<ll,ll>;\nusing str=string;\ntemplate<class\
+    \ T>using vec=vector<T>;\nusing vi=vec<int>;using vvi=vec<vi>;using vvvi=vec<vvi>;using\
+    \ vvvvi=vec<vvvi>;using vvvvvi=vec<vvvvi>;\nusing vll=vec<ll>;using vvll=vec<vll>;using\
+    \ vvvll=vec<vvll>;using vvvvll=vec<vvvll>;using vvvvvll=vec<vvvvll>;\nusing vpi=vec<pi>;using\
+    \ vvpi=vec<vpi>;using vvvpi=vec<vvpi>;using vvvvpi=vec<vvvpi>;using vvvvvpi=vec<vvvvpi>;\n\
+    using vpll=vec<pll>;using vvpll=vec<vpll>;using vvvpll=vec<vvpll>;using vvvvpll=vec<vvvpll>;using\
+    \ vvvvvpll=vec<vvvvpll>;\ntemplate<class T>using pq=priority_queue<T,vector<T>>;\n\
+    template<class T>using pqg=priority_queue<T,vector<T>,greater<T>>;\n#define rep(i,n)\
+    \ for(int i=0;i<(int)(n);i++)\n#define rep1(i,n) for(int i=1;i<=(int)(n);i++)\n\
+    #define per(i,n) for(int i=(int)(n)-1;0<=i;i--)\n#define per1(i,n) for(int i=(int)(n);0<i;i--)\n\
+    #define range(i,x) for(auto&i:x)\n#define range2(i,j,x) for(auto&[i,j]:x)\n#define\
+    \ all(x) (x).begin(),(x).end()\n#define rall(x) (x).rbegin(),(x).rend()\n#define\
+    \ Sort(x) sort((x).begin(),(x).end())\n#define troS(x) sort((x).rbegin(),(x).rend())\n\
+    #define Reverse(x) reverse((x).begin(),(x).end())\n#define uniq(x) sort((x).begin(),(x).end());(x).erase(unique((x).begin(),(x).end()),(x).end())\n\
     #define nextp(x) next_permutation((x).begin(),(x).end())\n#define nextc(x,k) next_combination((x).begin(),(x).end(),k)\n\
     #define bit(x,i) (((x)>>(i))&1)\n#define pf push_front\n#define pb push_back\n\
     #define df pop_front\n#define db pop_back\n#define fi first\n#define se second\n\
@@ -98,30 +97,28 @@ data:
     \ (y * y + c) % n;\n            m = gcd((long long)(x - y + n), n);\n        \
     \    if (m == n) break;\n        }\n        if (m != n) {\n            factorize(m,\
     \ factors);\n            factorize(n / m, factors);\n            return;\n   \
-    \     }\n    }\n}\n#line 4 \"verify/yosupo-enumerate_primes.test.cpp\"\n\r\nint\
-    \ main() { IO();\r\n    int T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\
-    \n}\r\n\r\nvoid solve() {\r\n    int n, a, b; cin >> n >> a >> b;\r\n    int cnt\
-    \ = enumprimes(n);\r\n    vi ans;\r\n    for (int i=b; i<cnt; i+=a) ans.pb(primes[i]);\r\
-    \n    cout << cnt << sp << ans.size() << nl;\r\n    cout << ans;\r\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\r\n\
-    #include \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int\
-    \ T=1;\r\n    // cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve()\
-    \ {\r\n    int n, a, b; cin >> n >> a >> b;\r\n    int cnt = enumprimes(n);\r\n\
-    \    vi ans;\r\n    for (int i=b; i<cnt; i+=a) ans.pb(primes[i]);\r\n    cout\
-    \ << cnt << sp << ans.size() << nl;\r\n    cout << ans;\r\n}"
+    \     }\n    }\n}\n#line 4 \"verify/yosupo-factorize.test.cpp\"\n\r\nint main()\
+    \ { IO();\r\n    int T=1;\r\n    cin >> T;\r\n    while (T--) solve();\r\n}\r\n\
+    \r\nvoid solve() {\r\n    ll n; cin >> n;\r\n    vll ans;\r\n    factorize(n,\
+    \ ans);\r\n    Sort(ans);\r\n    cout << ans.size() << sp << ans;\r\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\r\n#include\
+    \ \"template\"\r\n#include \"prime\"\r\n\r\nint main() { IO();\r\n    int T=1;\r\
+    \n    cin >> T;\r\n    while (T--) solve();\r\n}\r\n\r\nvoid solve() {\r\n   \
+    \ ll n; cin >> n;\r\n    vll ans;\r\n    factorize(n, ans);\r\n    Sort(ans);\r\
+    \n    cout << ans.size() << sp << ans;\r\n}"
   dependsOn:
   - util/template.hpp
   - math/prime.hpp
   isVerificationFile: true
-  path: verify/yosupo-enumerate_primes.test.cpp
+  path: verify/yosupo-factorize.test.cpp
   requiredBy: []
-  timestamp: '2025-04-01 14:20:21+09:00'
+  timestamp: '2025-04-01 14:21:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo-enumerate_primes.test.cpp
+documentation_of: verify/yosupo-factorize.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo-enumerate_primes.test.cpp
-- /verify/verify/yosupo-enumerate_primes.test.cpp.html
-title: verify/yosupo-enumerate_primes.test.cpp
+- /verify/verify/yosupo-factorize.test.cpp
+- /verify/verify/yosupo-factorize.test.cpp.html
+title: verify/yosupo-factorize.test.cpp
 ---
