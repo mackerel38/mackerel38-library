@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: graph
+    pages:
+    - icon: ':warning:'
+      path: graph/graphtemplate.hpp
+      title: graph/graphtemplate.hpp
   - name: .
     pages:
     - icon: ':warning:'
@@ -22,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/BIT.hpp
       title: structure/BIT.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/UnionFind.hpp
       title: structure/UnionFind.hpp
     - icon: ':heavy_check_mark:'
@@ -42,13 +47,13 @@ data:
       title: structure/xorBIT.hpp
   - name: util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu-DSL_1_A.test.cpp
       title: verify/aizu-DSL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
