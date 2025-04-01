@@ -29,12 +29,12 @@ data:
     \     d2 >>= 1;\n        }\n        if (x != 1) {\n            long long t;\n\
     \            for (t = 0; t < s; ++t) {\n                if (x == n - 1) break;\n\
     \                x = x * x % n;\n            }\n            if (t == s) return\
-    \ false;\n        }\n    }\n    return true;\n}\nvector<int> primes;\n// n \u4EE5\
-    \u4E0B\u306E\u7D20\u6570\u3092primes \u306B\u5217\u6319\u3059\u308B O(n log log\
-    \ n)\nint enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long\
-    \ long i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
-    \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
-    \        }\n    }\n    return primes.size();\n}\n// \u7D20\u56E0\u6570\u5206\u89E3\
+    \ false;\n        }\n    }\n    return true;\n}\n// n \u4EE5\u4E0B\u306E\u7D20\
+    \u6570\u3092\u5217\u6319\u3059\u308B O(n log log n)\nint enumprimes(int n, vector<int>&\
+    \ primes) {\n    vector<bool> primeflag(n+1);\n    for (long long i=2; i<=n; i++)\
+    \ {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n     \
+    \   for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n  \
+    \      }\n    }\n    return primes.size();\n}\n// \u7D20\u56E0\u6570\u5206\u89E3\
     \u3092\u3059\u308B O(n^0.25)\nvoid factorize(long long n, vector<long long>& factors)\
     \ {\n    if (n <= 1) return;\n    if (isprime(n)) {\n        factors.push_back(n);\n\
     \        return;\n    }\n    if (n % 2 == 0) {\n        while (n % 2 == 0) {\n\
@@ -59,14 +59,14 @@ data:
     \ 1;\n        }\n        if (x != 1) {\n            long long t;\n           \
     \ for (t = 0; t < s; ++t) {\n                if (x == n - 1) break;\n        \
     \        x = x * x % n;\n            }\n            if (t == s) return false;\n\
-    \        }\n    }\n    return true;\n}\nvector<int> primes;\n// n \u4EE5\u4E0B\
-    \u306E\u7D20\u6570\u3092primes \u306B\u5217\u6319\u3059\u308B O(n log log n)\n\
-    int enumprimes(int n) {\n    vector<bool> primeflag(n+1);\n    for (long long\
-    \ i=2; i<=n; i++) {\n        if (primeflag[i]) continue;\n        primes.push_back(i);\n\
-    \        for (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n\
-    \        }\n    }\n    return primes.size();\n}\n// \u7D20\u56E0\u6570\u5206\u89E3\
-    \u3092\u3059\u308B O(n^0.25)\nvoid factorize(long long n, vector<long long>& factors)\
-    \ {\n    if (n <= 1) return;\n    if (isprime(n)) {\n        factors.push_back(n);\n\
+    \        }\n    }\n    return true;\n}\n// n \u4EE5\u4E0B\u306E\u7D20\u6570\u3092\
+    \u5217\u6319\u3059\u308B O(n log log n)\nint enumprimes(int n, vector<int>& primes)\
+    \ {\n    vector<bool> primeflag(n+1);\n    for (long long i=2; i<=n; i++) {\n\
+    \        if (primeflag[i]) continue;\n        primes.push_back(i);\n        for\
+    \ (long long j=i*i; j<=n; j+=i) {\n            primeflag[j] = true;\n        }\n\
+    \    }\n    return primes.size();\n}\n// \u7D20\u56E0\u6570\u5206\u89E3\u3092\u3059\
+    \u308B O(n^0.25)\nvoid factorize(long long n, vector<long long>& factors) {\n\
+    \    if (n <= 1) return;\n    if (isprime(n)) {\n        factors.push_back(n);\n\
     \        return;\n    }\n    if (n % 2 == 0) {\n        while (n % 2 == 0) {\n\
     \            factors.push_back(2);\n            n /= 2;\n        }\n        factorize(n,\
     \ factors);\n        return;\n    }\n    while (true) {\n        __int128_t x\
@@ -81,7 +81,7 @@ data:
   isVerificationFile: false
   path: math/prime.hpp
   requiredBy: []
-  timestamp: '2025-04-01 14:20:21+09:00'
+  timestamp: '2025-04-01 14:39:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo-enumerate_primes.test.cpp
